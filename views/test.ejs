@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-database.js"></script>
+
+</head>
+<h1>Firebase Test</h1>
+<p>Firebase console에 데이터가 추가 되었는지 확인하세요</p>
+<script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+        apiKey: "AIzaSyArJBZmBYQEKT5s0wXHoqquM8uR8pfFmDI",
+        authDomain: "nodecrudtest.firebaseapp.com",
+        databaseURL: "https://nodecrudtest.firebaseio.com",
+        projectId: "nodecrudtest",
+        storageBucket: "",
+        messagingSenderId: "694058526794",
+        appId: "1:694058526794:web:bed1291487b2e44c"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+
+    // var newPostKey = firebase.database().ref().child('posts').push().key;
+
+    // var postData = {
+    //     brdno: newPostKey,
+    //     brdwriter: "홍길동",
+    //     brdtitle: "게시판 제목",
+    //     brdmemo: "게시물 내용",
+    //     brddate: Date.now()
+    // };
+
+    // var updates = {};
+    // updates['board/' + newPostKey] = postData;
+
+    // firebase.database().ref().set(updates);
+
+    firebase.database().ref('board/'+1).set({
+        brdno: 1,
+        brdwriter: "홍길동",
+        brdtitle: "게시판 제목",
+        brdmemo: "게시물 내용",
+        brddate: Date.now()
+    });
+
+</script>
